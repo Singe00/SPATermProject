@@ -17,7 +17,7 @@ import org.json.JSONObject
 import java.net.URLEncoder
 
 class SongViewModel(application: Application) : AndroidViewModel(application) {
-    data class Song (var id: Int, var title: String, var singer: String, var image: String)
+    data class Song (var id: Int, var title: String, var singer: String, var image: String,var link:String)
 
     companion object {
         const val QUEUE_TAG = "SongVolleyRequest"
@@ -77,8 +77,9 @@ class SongViewModel(application: Application) : AndroidViewModel(application) {
             val title = item.getString("title")
             val singer = item.getString("singer")
             val image = item.getString("image")
+            val link = item.getString("link")
 
-            songs.add(Song(id, title, singer, image))
+            songs.add(Song(id, title, singer, image, link))
         }
     }
 
